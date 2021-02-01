@@ -1,5 +1,7 @@
-const fetch = require('node-fetch');
+const fetch = require('node-fetch')
+const Film = require('./films.controller');  
 const indexCtrl ={};
+
 
 indexCtrl.renderIndex= (req, res)=>{
     res.render('index',{title: 'Funciono'})
@@ -32,18 +34,16 @@ indexCtrl.renderFilmResults= (req, res)=>{
     let titulo = req.params.titulo
     let API_KEY = '9ad49d3'
 
+    // if( titulo = true || Film == true )
+
+    /* Film.renderFilmsDB(req,res);  */
+//si no ! encuentras nada en mongo ni en omdb entonces pintas no se ha encontrado ELSE me traes resultados tanto de omdb como de api
     fetch ('http://www.omdbapi.com/?s='+ titulo + '&apikey=' + API_KEY)
     .then (data => data.json())
     .then (films => {
+        
       let foundMovies = (films['Search']);
       res.render ('films-results' , {movies:foundMovies});
-      console.log (foundMovies.forEach(movie => {
-         console.log (movie['Title']);
-         let filmId =(movie['imdbID']);
-         let Poster =(movie + 'Poster')
-
-
-      }))
 })}
 
 

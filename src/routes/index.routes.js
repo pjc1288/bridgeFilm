@@ -11,7 +11,7 @@ const{
     renderFilmResults,
     redirectFilmResults, 
     renderEditFilm,
-    renderAddFilm}=require('../controllers/index.controller')
+    renderAddFilm} =require('../controllers/index.controller')
 
 router.get('/', renderIndex );
 

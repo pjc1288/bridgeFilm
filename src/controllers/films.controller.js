@@ -55,7 +55,9 @@ filmCtrl.deleteFilm  = async (req, res)=>{
 
 filmCtrl.renderFilmsDBX = async (req, res)=>{
     let titulo = req.params.titulo
-    const films = await Film.find({Title: titulo})
+    // let movies = req.params.movies
+    const films = await Film.find({Title: new RegExp(titulo)});
+    // const moviesAll = await Film.find({Title: movies}).toArray()
     
     res.render('films/all-films', {films})
 }
