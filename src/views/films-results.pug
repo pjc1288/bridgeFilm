@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Film The Bridge
+        include partials/head.pug
+    body
+        include partials/navigation.pug
+        // BOTON SEARCH
+        form.containerSearchFilms(action='/films-results' method='POST')
+            input.searchSlider(type='text' name='titulo' placeholder='Search a Movie')
+            button#lupaSlider(type='submit' for='titulo')
+                i.fa.fa-search(style="color:#BF210F")
+        each movie in movies
+            table.tabla
+                tr
+                    th(rowspan="7")
+                        a(href=`/film/${movie.imdbID}`)
+                            img.posters(src=movie.Poster)
+                    td.film__title=movie.Title
+                tr
+                    td.detailss=movie.Year
+                tr
+                    td.detailss=movie.Type
+                tr
+                    td.seeMore
+                        a(href=`/film/${movie.imdbID}`).detailss SEE MORE
+    script(src='/js/script.js')
+
+
+
+
+
+
+
+
+
+
+
+
+    

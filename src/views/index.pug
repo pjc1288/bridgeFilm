@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Film The Bridge
+        include partials/head.pug
+    body
+        header.header-login
+          .header-login__gradient--up
+          .header-logo--login
+            img.login__logo--img(src='./img/filmBridgeIso.png' alt='')
+          .header-login__gradient--down
+        section.form-login
+          form.main-form(action='' method='POST' target='_Blank')
+            label.form-label(for='email') Email
+            input#email.form-input(type='email' name='email' placeholder='E-mail address here')
+            label.form-label(for='password') Password
+            input#password.form-input(type='password' name='password' placeholder='Password here')
+            input#submit.form-input.main-submit(type='submit' value='LOGIN')
+        article.social-logi
+          section.social-login--lines
+            p.paragraph--login Social Login
+          section.social-login--icons
+            a(href='#')
+              i.social-login__icon.fab.fa-facebook
+            a(href='#')
+              i.social-login__icon.fab.fa-google-plus
+        article.no-account
+          p.no-account__paragraph.paragraph--grey Don&rsquo;t have an account?
+          a.no-account__link(href='#') REGISTER
+
+        a.button-big(href='/search') ADMINISTRADOR
+        a.button-big(href='/search') USUARIO
+
+
+
+
+          
+    script(src='js/script.js')

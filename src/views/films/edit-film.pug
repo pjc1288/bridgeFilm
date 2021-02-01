@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Update your film
+        include ../partials/head.pug
+    body
+        include ../partials/navigation.pug
+        form.main-form(action=`/films/edit/${film._id}?_method=PUT` method='POST')
+            input(type="hidden" name='_method' value='PUT')
+            label.form-label Title
+            input#title.form-input(type='text' name='Title' value=`${film.Title}`)
+            label.form-label Year
+            input#year.form-input(type='text' name='Year' value=`${film.Year}`)
+            label.form-label Director
+            input#director.form-input(type='text' name='Director' value=`${film.Director}`)
+            label.form-label Genre
+            input#genre.form-input(type='text' name='Genre' value=`${film.Genre}`)
+            label.form-label Runtime
+            input#runtime.form-input(type='text' name='Runtime' value=`${film.Runtime}`)
+            label.form-label Poster
+            input#poster.form-input(type='text' name='Poster' value=`${film.Poster}`)
+            button#submit.form-input.main-submit(type='submit') Save
+    
+        script(src='/js/script.js') 

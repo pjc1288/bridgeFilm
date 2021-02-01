@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Film The Bridge
+        include ../partials/head.pug
+    body
+        include ../partials/navigation.pug
+        // BOTON SEARCH
+        form.containerSearchFilms
+            input.searchSlider(type="text" name="search")
+            button#lupaSlider(type="submit")
+                i.fa.fa-search(style="color:#BF210F")
+        each film in films
+            table.tabla
+                tr
+                    th(rowspan="7")
+                        img.posters(src=film.Poster)
+                    td.film__title=film.Title
+                tr
+                    td.td-buttons
+                        a(href=`/films/edit/${film._id}`)
+                            i.fa.fa-pen(class='edit-delete-buttons')
+                    td.td-buttons
+                        form(action=`/films/delete/${film._id}?_method=DELETE` method='POST')
+                            input(type='hidden' name='_method' value='DELETE')
+                            button.delete-button(type='submit')
+                                i.fa.fa-trash(class='edit-delete-buttons')
+            
+            
+                //- a(href=`/films/edit/${film._id}`).button-small Editar Pelicula
+                //- form(action=`/films/delete/${film._id}?_method=DELETE` method='POST')
+                //- input(type='hidden' name='_method' value='DELETE')
+                //- button(type='submit').button-small Delete         
+        script(src='/js/script.js')    
+

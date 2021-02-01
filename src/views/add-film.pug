@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Film The Bridge
+        include partials/head.pug
+    body
+        include partials/navigation.pug
+        h2 ADD MOVIE
+        section.form-content    
+          form.main-form(action='' method='POST' target='_Blank')
+            // MOVIE -------------------------------------------------------
+            label.form-label(for='title') Title
+            input#title.form-input(type='text' name='title' placeholder='movie title here')
+            label.form-label(for='year') Year
+            input#year.form-input(type='text' name='year' placeholder='movie year here')
+            label.form-label(for='director') Director
+            input#director.form-input(type='text' name='director' placeholder='movie director here')
+            label.form-label(for='genre') Genre
+            input#genre.form-input(type='text' name='genre' placeholder='movie genre here')
+            label.form-label(for='runtime') Runtime
+            input#runtime.form-input(type='text' name='runtime' placeholder='movie runtime here')
+            label.form-label(for='poster') Poster
+            input#poster.form-input(type='file' name='poster' placeholder='movie poster here')
+            input#submit.form-input.main-submit(type='submit' value='ADD')
+
+
+
+
+
+        script(src='js/script.js')

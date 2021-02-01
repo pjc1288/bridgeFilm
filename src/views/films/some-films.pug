@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Film The Bridge
+        include ../partials/head.pug
+    body
+        include ../partials/navigation.pug
+        h2=films
+        ul
+            each film in films
+                li.new-Film--Li=film.Title
+                li.new-Film--Li=film.Director
+                li.new-Film--Li=film._id
+                a(href=`/films/edit/${film._id}`) Editar Pelicula
+                form(action=`/films/delete/${film._id}?_method=DELETE` method='POST')
+                    input(type='hidden' name='_method' value='DELETE')
+                    button(type='submit') Delete
+        
+        script(src='/js/script.js') 

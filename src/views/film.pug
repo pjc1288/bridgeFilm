@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include partials/head.pug
+    body
+      .film-detail-header
+        include partials/navigation.pug
+        .header-foo
+          h2.film__title=filmTitle
+          table.header__genre
+            tr
+              td.paragraph.genre__table Action
+              td.paragraph.genre__table Crime
+              td.paragraph.genre__table Mistery
+              td.paragraph.genre__table.genre__table--last Thriller
+          button.button__heart-fav
+            i.fas.fa-heart
+
+
+      article.rate
+        h2.rates__number=rating
+        section.rates__stars-outer
+          .rates__stars-inner
+
+      article.film__information
+        h2.film__details--title Plot
+        p.paragraph=plot
+        h2.film__details--title Information
+        table.film__information--table
+          tr
+            td.paragraph--grey.film__details--td Runtime
+            td.paragraph.film__details--td=runtime
+          tr
+            td.paragraph--grey.film__details--td Realased
+            td.paragraph.film__details--td=released
+          tr
+            td.paragraph--grey.film__details--td Genre
+            td.paragraph.film__details--td=genre
+          tr
+            td.paragraph--grey.film__details--td Country
+            td.paragraph.film__details--td=country
+          tr
+            td.paragraph--grey.film__details--td Director
+            td.paragraph.film__details--td=director
+          tr
+            td.paragraph--grey.film__details--td Writers
+            td.paragraph.film__details--td=writer
+          tr
+            td.paragraph--grey.film__details--td Cast
+            td.paragraph.film__details--td=cast
+        h2.film__details--title Maybe you also like
+
+        p.getPosterPut=poster
+
+
+
+      script(src='/js/script.js')
