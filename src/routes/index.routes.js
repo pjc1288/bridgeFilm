@@ -9,23 +9,26 @@ const{
     renderFilm, 
     redirectFilm, 
     renderFilmResults,
-    redirectFilmResults, 
-    renderEditFilm,
-    renderAddFilm} =require('../controllers/index.controller')
+    redirectFilmResults,
+    renderAdminDash, 
+    renderUserDash
+} =require('../controllers/index.controller')
 
 router.get('/', renderIndex );
 
 router.get('/search', renderSearch);
+
+router.get('/userDash', renderUserDash);
+
+router.get('/adminDash', renderAdminDash);
+
+
 
 router.get('/film/:titulo', renderFilm );
 router.post('/film', redirectFilm);
 
 router.get('/films-results/:titulo', renderFilmResults);
 router.post('/films-results', redirectFilmResults);
-
-router.get('/edit-film', renderEditFilm);
-
-router.get('/add-film', renderAddFilm);
 
 router.get('/searchX', renderSearchX);
 
