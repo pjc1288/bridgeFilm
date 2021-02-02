@@ -8,15 +8,16 @@ filmCtrl.renderFilmForm = (req, res)=>{
 
 filmCtrl.createNewFilm = async (req, res)=>{
 
-    const {Title, Year, Director, Genre, Runtime} =req.body
+    const {Title, Year, imdbID, Director, Genre, Runtime, Poster} =req.body
 
     const newFilm = new Film ({
                             Title, 
                             Year,
+                            imdbID,
                             Director,
                             Genre,
                             Runtime,
-                          /*   Poster, */
+                            Poster,
                             })
 
     await newFilm.save();
@@ -37,6 +38,7 @@ filmCtrl.updateFilm = async (req, res)=>{
     await Film.findByIdAndUpdate(req.params.id, {
         Title:req.body.Title, 
         Year:req.body.Year, 
+        imdbID:req.body.imdbID, 
         Director:req.body.Director, 
         Genre:req.body.Genre, 
         Genre:req.body.Genre, 

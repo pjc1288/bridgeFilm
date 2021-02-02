@@ -8,6 +8,9 @@ const FilmScheme = new Schema({
     Year:{
         type: Number,
     },
+    imdbID:{
+        type: Number,
+    },
     Director:{
         type: String,
     },
