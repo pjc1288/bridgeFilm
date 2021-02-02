@@ -7,4 +7,17 @@ html(lang="en")
         include partials/head.pug
     body
         include partials/navigation.pug
-        h1=title
+        //boton search
+        form.containerSearchSlider
+            input.search(type="text" name="search")
+            button#lupaSlider(type="submit")
+                i.fa.fa-search(style="color:#BF210F")
+        // last films
+        article.header-fooSlider
+            h2.film__titleSlider LAST FILMS
+        include partials/carrusel.pug
+
+        script(src="/js/JQuery3.3.1.js")
+        script(src="/js/lightslider.js")
+        script(src="/js/carrusel.js")
+        script(src="/js/script.js")
