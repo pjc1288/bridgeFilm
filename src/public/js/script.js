@@ -39,5 +39,3 @@ for(const rating in ratings) {
 
 const $poster = document.getElementsByClassName('getPosterPut')[0].innerHTML
 document.getElementsByClassName('film-detail-header')[0].style.backgroundImage= "url('" + $poster + "')"
-
-

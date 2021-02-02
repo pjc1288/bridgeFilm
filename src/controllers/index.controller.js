@@ -11,8 +11,9 @@ indexCtrl.renderIndex= (req, res)=>{
 indexCtrl.renderSearch= (req, res)=>{
     res.render('search')
 };
-indexCtrl.renderAdminDash= (req, res)=>{
-    res.render('adminDash',{title: 'Admin Dash'})
+indexCtrl.renderAdminDash= async (req, res)=>{
+    const films = await db.find();
+    res.render('adminDash',{films})
 };
 indexCtrl.renderUserDash= (req, res)=>{
     res.render('userDash',{title: 'User Dash'})

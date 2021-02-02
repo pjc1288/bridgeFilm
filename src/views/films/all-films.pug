@@ -7,11 +7,9 @@ html(lang="en")
         include ../partials/head.pug
     body
         include ../partials/navigation.pug
+        .header-general
         // BOTON SEARCH
         form.containerSearchFilms
-            input.searchSlider(type="text" name="search")
-            button#lupaSlider(type="submit")
-                i.fa.fa-search(style="color:#BF210F")
         each film in films
             table.tabla
                 tr
