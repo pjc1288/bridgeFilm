@@ -21,10 +21,40 @@ html(lang="en")
                         a(href=`/films/edit/${film._id}`)
                             i.fa.fa-pen(class='edit-delete-buttons')
                     td.td-buttons
-                        form(action=`/films/delete/${film._id}?_method=DELETE` method='POST')
-                            input(type='hidden' name='_method' value='DELETE')
-                            button.delete-button(type='submit')
-                                i.fa.fa-trash(class='edit-delete-buttons')
+                        //- form(action=`/films/delete/${film._id}?_method=DELETE` method='POST')
+                        //-     input(type='hidden' name='_method' value='DELETE')
+                        //-     button.delete-button(type='submit')
+                        //-         i.fa.fa-trash(class='edit-delete-buttons')
+
+
+
+
+
+
+
+
+
+                    
+                        //- -------MODAL------
+                        .content-wrapperModal
+                            label
+                                span.btnModal.fa.fa-trash
+                                    input(type='checkbox')
+                                    .confirm-modal
+                                        form.formModal(action=`/films/delete/${film._id}?_method=DELETE` method='POST')
+                                            p.textModal Are you sure to delete this film?
+                                            button(type='submit').btnModalConfirm Yes
+                                            a.btnModalConfirm No
+
+
+
+
+
+
+
+
+
+                        
             
             
                 //- a(href=`/films/edit/${film._id}`).button-small Editar Pelicula
