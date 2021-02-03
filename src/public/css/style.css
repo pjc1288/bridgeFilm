@@ -24,9 +24,9 @@ h2{
 }
 h3{
   color:#ffffff;
-  font-size:15px;
-  text-align: left;
-  margin: 45px 0px 10px 45px;
+  font-size:18px;
+  text-align: center;
+  margin: 50px 0px 0px 0px;
 }
 
 .paragraph{
@@ -734,23 +734,58 @@ width:100%;
   
 }
 
+.containerSearchAdmin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 50px;
+  width: 300px;
+  height: 30px;
+  margin-top: 80px;    
+  border: none;
+  font-size: 30px;
+  float: left;
+  color: #ffffff;  
+  
+}
+
 .lupa__search-page{
   color: #BF210F;
-  font-size:100px;
+  font-size: 100px;
   margin:40px 10px;
 }
+
+.lupa__search-pageAdmin{
+  color: #BF210F;
+  font-size: 150px;
+  margin: 30px 10px;
+}
+
+
+
 
 .input__search-page{
   Background-color:transparent;
   margin-left:10px;
-  width: 300px;
+  width: 100px;
   border-top:transparent;
   border-left: transparent;
   border-right:transparent;
   color: #ffffff;
   outline: none;
-  
 }
+
+.input__search-page{
+  Background-color:transparent;
+  margin-left:10px;
+  width: 200px;
+  border-top:transparent;
+  border-left: transparent;
+  border-right:transparent;
+  color: #ffffff;
+  outline: none;
+}
+
 .input__search-page:placeholder-shown{
   text-align: center;
 }
@@ -785,6 +820,81 @@ width:100%;
 
 }
 
-.containerSearchFilms{
-  margin: 350px 0px 0px 0px;
+/**********************DASHBOARD***********/
+/*********boton search*******/
+
+
+/******last films********/
+.header-fooSlider{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width:100%;
+  height: 50px;
+  margin-top: 150px;
+  margin-bottom: 10px;
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 3%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 3%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 3%, rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
 }
+.film__titleSlider{
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.lupa__search-pageUser{
+  color: #BF210F;
+  font-size:50px;
+  margin:0px 10px;
+}
+
+.containerSearchUser{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 50px;
+  width: 30px;
+  height: 30px;
+  margin-top: 80px;    
+  border: none;
+  font-size: 50px;
+  float: left;
+  color: #ffffff;  
+  
+}
+/* Tabla de searchResults */
+/* .containerSearchFilms{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 90px;
+  width: 300px;
+  height: 30px;
+  margin-top: 0px;    
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  
+} */
+/* .tabla{
+  margin-top: 60px;
+  margin-left: 20px;
+}
+.posters{
+  width: 160px;
+  height: 220px;
+  padding-right: 20px;
+}
+.detailss{
+  font-size: 10px;
+  color:white
+}
+.seeMore{
+  padding-left: 30px;
+  color:white
+} */

@@ -8,7 +8,7 @@ filmCtrl.renderFilmForm = (req, res)=>{
 
 filmCtrl.createNewFilm = async (req, res)=>{
 
-    const {Title, Year, imdbID, Director, Genre, Runtime, Poster} =req.body
+    const {Title, Year, imdbID, Director, Genre, Runtime, Poster}=req.body
 
     const newFilm = new Film ({
                             Title, 
@@ -62,8 +62,6 @@ filmCtrl.renderFilmsDBX = async (req, res)=>{
     res.render('films/all-films', {films})
 }
 
-
-
 filmCtrl.renderFilmDetailBX = async (req, res)=>{
     let imdbID = req.params.imdbID
     const films = await Film.find({imdbID:imdbID});
@@ -71,20 +69,14 @@ filmCtrl.renderFilmDetailBX = async (req, res)=>{
 }
 
 
-
-
 filmCtrl.redirectFilmDetailDBX  = (req, res)=>{
     let titulo = req.body.titulo
     res.redirect ('films/' + titulo)
 };
 
-
-
-
 filmCtrl.redirectFilmsDBX  = (req, res)=>{
     let titulo = req.body.titulo
     res.redirect ('/films/' + titulo)
 };
-
 
 module.exports = filmCtrl

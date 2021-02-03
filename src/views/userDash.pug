@@ -7,11 +7,14 @@ html(lang="en")
         include partials/head.pug
     body
         include partials/navigation.pug
+        h3 Welcome Lali
+        
         //boton search
-        form.containerSearchSlider
-            input.search(type="text" name="search")
-            button#lupaSlider(type="submit")
-                i.fa.fa-search(style="color:#BF210F")
+        form.containerSearchSlider(action='/films-results' method='POST')
+            label.lupa__search-pageUser(type='submit' for='titulo')
+                i.fa.fa-search
+            input#search.input__search-pageUser(type='text' name='titulo' placeholder='Search a Movie')
+
         // last films
         article.header-fooSlider
             h2.film__titleSlider LAST FILMS
