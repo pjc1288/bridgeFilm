@@ -2,6 +2,7 @@ const express = require ('express')
 const router = express.Router()
 const fetch = require('node-fetch');
 require('../models/database')
+const passport = require('passport')
 const{
     renderIndex, 
     renderSearch, 
@@ -16,10 +17,11 @@ const{
     renderLogin,
     renderRegister,
 } =require('../controllers/index.controller')
+const {isAuthenticated} = require('../helpers/auth')
 
-router.get('/', renderIndex );
+router.get('/',isAuthenticated,renderIndex );
 
-router.get('/search', renderSearch);
+router.get('/search',isAuthenticated, renderSearch);
 
 
 router.get('/register', renderRegister)
@@ -29,19 +31,19 @@ router.get('/login', renderLogin);
 
 
 
-router.get('/userDash', renderUserDash);
+router.get('/userDash', isAuthenticated, renderUserDash);
 
-router.get('/adminDash', renderAdminDash);
+router.get('/adminDash', isAuthenticated, renderAdminDash);
 
-router.get('/favorites', renderFavorites);
+router.get('/favorites', isAuthenticated, renderFavorites);
 
-router.get('/film/:titulo', renderFilm );
+router.get('/film/:titulo', isAuthenticated, renderFilm );
 router.post('/film', redirectFilm);
 
-router.get('/films-results/:titulo', renderFilmResults);
+router.get('/films-results/:titulo', isAuthenticated, renderFilmResults);
 router.post('/films-results', redirectFilmResults);
 
-router.get('/searchX', renderSearchX);
+router.get('/searchX', isAuthenticated, renderSearchX);
 
 
 
