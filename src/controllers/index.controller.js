@@ -11,10 +11,20 @@ indexCtrl.renderIndex= (req, res)=>{
 indexCtrl.renderSearch= (req, res)=>{
     res.render('search')
 };
+
+indexCtrl.renderFavorites= (req, res)=>{
+    res.render('favorites',{title: 'Página de favoritos'})
+};
+
+indexCtrl.renderSearch= (req, res)=>{
+    res.render('search')
+};
+
 indexCtrl.renderAdminDash= async (req, res)=>{
     const films = await db.find();
     res.render('adminDash',{films})
 };
+
 indexCtrl.renderUserDash= (req, res)=>{
     res.render('userDash',{title: 'User Dash'})
 };

@@ -11,7 +11,8 @@ const{
     renderFilmResults,
     redirectFilmResults,
     renderAdminDash, 
-    renderUserDash
+    renderUserDash,
+    renderFavorites,
 } =require('../controllers/index.controller')
 
 router.get('/', renderIndex );
@@ -21,6 +22,8 @@ router.get('/search', renderSearch);
 router.get('/userDash', renderUserDash);
 
 router.get('/adminDash', renderAdminDash);
+
+router.get('/favorites', renderFavorites);
 
 
 
