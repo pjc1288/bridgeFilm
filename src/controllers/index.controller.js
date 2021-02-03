@@ -87,4 +87,14 @@ indexCtrl.renderSearchX= (req, res)=>{
 };
 
 
+
+indexCtrl.renderRegister =(req, res) => {
+    res.render('register', {title: 'soy el register'})
+};
+
+indexCtrl.renderLogin =(req, res) => {
+    res.render('login', {title: 'soy el login'} )
+};
+
+
 module.exports = indexCtrl;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Film The Bridge
+        include partials/head.pug
+    body
+        header.header-login
+          .header-login__gradient--up
+          .header-logo--login
+            img.login__logo--img(src='./img/filmBridgeIso.png' alt='')
+          .header-login__gradient--down
+
+        section.form-login
+          form.main-form(action='/auth/login' method='POST')
+            label.form-label(for='email') Email
+                input.form-input(type='email' id="email" name='email' placeholder='E-mail address here')
+            label.form-label(for='password') Password
+                input.form-input(type='password' id="password" name='password' placeholder='Password here')
+            input.form-input.main-submit(type='submit' value='LOGIN')
+
+
+            
+            //- form(action='/auth/login' method='POST')
+            //-                 .form-group
+            //-                     label(for='email') Email:
+            //-                     input(type='text' id="email" name='email')
+            //-                 .form-group
+            //-                     label(for='password') Password:
+            //-                     input(type='password' id="password" name='password')
+            //-                 .form-group
+            //-                     button(type='submit') Log in
+
+
+
+            
+        //- article.social-logi
+        //-   section.social-login--lines
+        //-     p.paragraph--login Social Login
+        //-   section.social-login--icons
+        //-     a(href='#')
+        //-       i.social-login__icon.fab.fa-facebook
+        //-     a(href='#')
+        //-       i.social-login__icon.fab.fa-google-plus
+        //- article.no-account
+        //-   p.no-account__paragraph.paragraph--grey Don't have an account?
+        //-   a.no-account__link(href='#') REGISTER
+
+        //- a.button-big(href='/adminDash') ADMINISTRADOR
+        //- a.button-big(href='/userDash') USUARIO
+
+
+
+
+          
+    script(src='js/script.js')
