@@ -10,6 +10,8 @@ const{
     deleteFilm, 
     renderFilmsDBX,
     redirectFilmsDBX,
+    renderFilmDetailBX,
+    redirectFilmDetailDBX,
 } = require('../controllers/films.controller');
 
 
@@ -23,6 +25,10 @@ router.get('/films', renderFilmsDB  )
 // Get Some Films
 router.get ('/films/:titulo', renderFilmsDBX)
 router.post ('/films/:titulo', redirectFilmsDBX)
+
+// Get A Film detail
+router.get ('/films/:imdb', renderFilmDetailBX)
+router.post ('/films/:imdb', redirectFilmDetailDBX)
 
 //Edit Films
 router.get('/films/edit/:id', renderEditForm)

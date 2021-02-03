@@ -41,7 +41,6 @@ filmCtrl.updateFilm = async (req, res)=>{
         imdbID:req.body.imdbID, 
         Director:req.body.Director, 
         Genre:req.body.Genre, 
-        Genre:req.body.Genre, 
         Runtime:req.body.Runtime,
         Poster:req.body.Poster,
     })
@@ -62,6 +61,25 @@ filmCtrl.renderFilmsDBX = async (req, res)=>{
     
     res.render('films/all-films', {films})
 }
+
+
+
+filmCtrl.renderFilmDetailBX = async (req, res)=>{
+    let imdbID = req.params.imdbID
+    const films = await Film.find({imdbID:imdbID});
+    res.render('film/', {films})
+}
+
+
+
+
+filmCtrl.redirectFilmDetailDBX  = (req, res)=>{
+    let titulo = req.body.titulo
+    res.redirect ('films/' + titulo)
+};
+
+
+
 
 filmCtrl.redirectFilmsDBX  = (req, res)=>{
     let titulo = req.body.titulo
