@@ -129,9 +129,9 @@
   }
   
   /* For that cute little fly down effect */
-  input:not(:checked) + .confirm-modal form {
+  /* input:not(:checked) + .confirm-modal form {
     transform: translate(-50%, -100px);
-  }
+  } */
   
   /* Allow buttons to be clickable. */
   .confirm-modal button {
