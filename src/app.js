@@ -4,6 +4,7 @@ const mysql = require('mysql');
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser');
 
+
 dotenv.config({path:'./.env'})
 
 const app = express();
@@ -30,6 +31,10 @@ app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'))
 app.use(express.json());
 app.use(cookieParser());
+
+
+
+
 
 db.connect( (error) =>{
   if(error){
