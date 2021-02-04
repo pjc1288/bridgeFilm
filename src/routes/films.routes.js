@@ -1,6 +1,6 @@
-const {Router} = require('express')
+const {Router} = require('express');
 const router = Router()
-const passport = require('passport')
+
 const{ 
     renderFilmForm, 
     createNewFilm, 
@@ -14,31 +14,29 @@ const{
     redirectFilmDetailDBX,
 } = require('../controllers/films.controller');
 
-const {isAuthenticated} = require('../helpers/auth')
+const {isAuth} = require('../helpers/auth')
+
 //New Film
-router.get('/films/add', isAuthenticated, renderFilmForm )
-router.post('/films/new-film', createNewFilm)
+router.get('/films/add', isAuth, renderFilmForm )
+router.post('/films/new-film', isAuth, createNewFilm)
 
 // Get All Films
-router.get('/films', isAuthenticated, renderFilmsDB  )
+router.get('/films', isAuth, renderFilmsDB  )
 
 // Get Some Films
-router.get ('/films/:titulo',isAuthenticated, renderFilmsDBX)
-router.post ('/films/:titulo', redirectFilmsDBX)
+router.get ('/films/:titulo', isAuth, renderFilmsDBX)
+router.post ('/films/:titulo', isAuth, redirectFilmsDBX)
 
 // Get A Film detail
-router.get ('/films/:imdb',isAuthenticated, renderFilmDetailBX)
-router.post ('/films/:imdb', redirectFilmDetailDBX)
+router.get ('/films/:imdb', isAuth, renderFilmDetailBX)
+router.post ('/films/:imdb', isAuth, redirectFilmDetailDBX)
 
 //Edit Films
-router.get('/films/edit/:id',isAuthenticated, renderEditForm)
-router.put('/films/edit/:id', updateFilm)
+router.get('/films/edit/:id', isAuth, renderEditForm)
+router.put('/films/edit/:id', isAuth, updateFilm)
 
 //Delate Film
 
-router.delete('/films/delete/:id',isAuthenticated, deleteFilm)
-
-
-
+router.delete('/films/delete/:id', isAuth, deleteFilm)
 
 module.exports = router
