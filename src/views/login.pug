@@ -20,38 +20,19 @@ html(lang="en")
                 input.form-input(type='password' id="password" name='password' placeholder='Password here')
             input.form-input.main-submit(type='submit' value='LOGIN')
 
+        article.social-logi
+          section.social-login--lines
+            p.paragraph--login Social Login
+          section.social-login--icons
+            a(href='#')
+              i.social-login__icon.fab.fa-facebook
+            a(href='#')
+              i.social-login__icon.fab.fa-google-plus
+        article.no-account
+          p.no-account__paragraph.paragraph--grey Don't have an account?
+          a.no-account__link(href='/register') REGISTER
 
-            
-            //- form(action='/auth/login' method='POST')
-            //-                 .form-group
-            //-                     label(for='email') Email:
-            //-                     input(type='text' id="email" name='email')
-            //-                 .form-group
-            //-                     label(for='password') Password:
-            //-                     input(type='password' id="password" name='password')
-            //-                 .form-group
-            //-                     button(type='submit') Log in
-
-
-
-            
-        //- article.social-logi
-        //-   section.social-login--lines
-        //-     p.paragraph--login Social Login
-        //-   section.social-login--icons
-        //-     a(href='#')
-        //-       i.social-login__icon.fab.fa-facebook
-        //-     a(href='#')
-        //-       i.social-login__icon.fab.fa-google-plus
-        //- article.no-account
-        //-   p.no-account__paragraph.paragraph--grey Don't have an account?
-        //-   a.no-account__link(href='#') REGISTER
-
-        //- a.button-big(href='/adminDash') ADMINISTRADOR
-        //- a.button-big(href='/userDash') USUARIO
-
-
-
-
+        a.button-big(href='/adminDash') ADMINISTRADOR
+        a.button-big(href='/userDash') USUARIO
           
     script(src='js/script.js')
