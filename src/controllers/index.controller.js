@@ -74,19 +74,9 @@ indexCtrl.redirectFilmResults = (req, res)=>{
     res.redirect ('films-results/' + titulo)
 };
 
-/* indexCtrl.renderEditFilm= (req, res)=>{
-   res.render('edit-film')
-}
-
-indexCtrl.renderAddFilm= (req, res)=>{
-   res.render('add-film')
-} */
-
 indexCtrl.renderSearchX= (req, res)=>{
     res.render('searchX')
 };
-
-
 
 indexCtrl.renderRegister =(req, res) => {
     res.render('register', {title: 'soy el register'})
@@ -95,6 +85,5 @@ indexCtrl.renderRegister =(req, res) => {
 indexCtrl.renderLogin =(req, res) => {
     res.render('login', {title: 'soy el login'} )
 };
-
 
 module.exports = indexCtrl;
