@@ -81,9 +81,8 @@ authCtrl.login = async (req, res, next) => {
                 console.log(error)
             }else{
             console.log(results);
-            return res.render('register', {
-                message:'User registered'
-            })
+            
+            res.redirect('/login')
             }
         })
     });
