@@ -21,19 +21,19 @@ router.get('/films/add', isAuth, renderFilmForm )
 router.post('/films/new-film', isAuth, createNewFilm)
 
 // Get All Films
-router.get('/films', isAuth, renderFilmsDB  )
+router.get('/films', renderFilmsDB  )
 
 // Get Some Films
 router.get ('/films/:titulo', isAuth, renderFilmsDBX)
-router.post ('/films/:titulo', isAuth, redirectFilmsDBX)
+router.post ('/films/:titulo', redirectFilmsDBX)
 
 // Get A Film detail
 router.get ('/films/:imdb', isAuth, renderFilmDetailBX)
-router.post ('/films/:imdb', isAuth, redirectFilmDetailDBX)
+router.post ('/films/:imdb', redirectFilmDetailDBX)
 
 //Edit Films
 router.get('/films/edit/:id', isAuth, renderEditForm)
-router.put('/films/edit/:id', isAuth, updateFilm)
+router.put('/films/edit/:id', updateFilm)
 
 //Delate Film
 

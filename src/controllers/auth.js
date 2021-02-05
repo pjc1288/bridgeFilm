@@ -58,7 +58,7 @@ authCtrl.login = async (req, res, next) => {
 
   authCtrl.register = (req, res) => {
     console.log(req.body);
-    const { name, email, password, passwordConfirm } = req.body;
+    const { name, email, password, passwordConfirm, role } = req.body;
     db.query('SELECT email FROM userauth WHERE email = ?', [email], async (error, results) => {
         if(error){
             console.log(error);
@@ -76,14 +76,13 @@ authCtrl.login = async (req, res, next) => {
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword)
 
-        db.query('INSERT INTO userauth SET ?', {name: name, email: email, password: hashedPassword}, (error, results) =>{
+        db.query('INSERT INTO userauth SET ?', {name: name, email: email, password: hashedPassword, role: role}, (error, results) =>{
             if(error){
                 console.log(error)
             }else{
             console.log(results);
-            return res.render('register', {
-                message:'User registered'
-            })
+            
+            res.redirect('/login')
             }
         })
     });

@@ -407,11 +407,7 @@ width:100%;
     text-decoration: none;
   }
   
-  a:link,
-  a:visited,
-  a:active {
-    text-decoration: none;
-  }
+  
   
   /*--> Burguer */
   li.li1 {
@@ -424,8 +420,8 @@ width:100%;
   li.li3{
       margin-top: -40px;
   }
-  .li4 {
-      margin-top: 30px;
+  p.li4 {
+    margin-top: 30px;
     list-style: none;
     text-align: center;
     font-family: Montserrat;
@@ -437,10 +433,17 @@ width:100%;
     font-weight: 500;
     text-decoration: none;
   }
-  .li4 a:hover {
-    text-decoration: none;
-    color: #000000;
+  a{
+    color: #ffffff;
+    
   }
+
+  a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+  
   .hamburger {
     position: fixed;
     background-color: transparent;
@@ -788,6 +791,7 @@ width:100%;
 
 .input__search-page:placeholder-shown{
   text-align: center;
+  font-size: 25px;
 }
 
 
@@ -865,6 +869,16 @@ width:100%;
   float: left;
   color: #ffffff;  
   
+}
+.input__search-pageUser{
+  Background-color:transparent;
+  margin-left:10px;
+  width: 100px;
+  border-top:transparent;
+  border-left: transparent;
+  border-right:transparent;
+  color: #ffffff;
+  outline: none;
 }
 /* Tabla de searchResults */
 /* .containerSearchFilms{
